@@ -1,0 +1,699 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#"
+     xml:base="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_PV_courant -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_PV_courant">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_PV_max -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_PV_max">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_caractéristique -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_caractéristique">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_joueur -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_joueur">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Joueur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_lancer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_lancer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Attribut"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_matériel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_matériel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Matériel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_nom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_nom">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_propriété -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_propriété">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_quête -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_quête">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Joueur"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Quête"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_incarné_par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_incarné_par"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_possédé_par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_possédé_par"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_une_caractéristique_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_une_caractéristique_de">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_caractéristique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_équipé_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_équipé_de">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#possède"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Équipement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#incarne -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#incarne">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Joueur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#opposé_a -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#opposé_a">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#possède -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#possède">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Possession"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#équipe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#équipe">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_possédé_par"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_équipé_de"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Alignement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Alignement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Attribut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Antagoniste -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Antagoniste">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage_non_Joueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_Corps_à_corps -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_Corps_à_corps">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Équipement"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_à_Distance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_Naturelle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_Naturelle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_à_Distance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_à_Distance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Équipement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Équipement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Intermédiaire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Intermédiaire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Lourde"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Légère"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Lourde -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Lourde">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Légère"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Légère -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Légère">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Attribut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Attribut"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Attribut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Charisme -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Charisme">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Consistance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Consistance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Crayon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Crayon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Matériel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature_morte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature_morte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature_vivante"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature_vivante -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature_vivante">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dextérité -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dextérité">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Donjons_et_Dragons -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Donjons_et_Dragons">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu_de_Rôle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Matériel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Environnement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Environnement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Force -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Force">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Humanoïde -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Humanoïde">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Monstre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu_de_Rôle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu_de_Rôle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Joueur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Joueur"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Loyauté -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Loyauté">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Alignement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Matériel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Matériel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Maître_du_Jeu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Maître_du_Jeu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Joueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Monstre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Monstre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Morale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Morale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Alignement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Papier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Papier">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Matériel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Humanoïde"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage_Joueur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage_Joueur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage_non_Joueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage_non_Joueur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage_non_Joueur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Possession -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Possession"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Quête -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Quête"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Sagesse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Sagesse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Équipement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Équipement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Possession"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d10 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d10">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d12 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d12">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d20 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d20">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d6 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d6">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d8 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d8">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#ALLONGÉE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#ALLONGÉE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#BON -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#BON">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Morale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#CHAOTIQUE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#CHAOTIQUE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Loyauté"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#FINESSE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#FINESSE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LANCER -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LANCER">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LOURDE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LOURDE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LOYAL -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LOYAL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Loyauté"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LÉGÈRE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LÉGÈRE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#MAUVAIS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#MAUVAIS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Morale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#MUNITION -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#MUNITION">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#NEUTRE_LOYAUTÉ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#NEUTRE_LOYAUTÉ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Loyauté"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#NEUTRE_MORALE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#NEUTRE_MORALE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Morale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#PORTÉE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#PORTÉE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#SPÉCIALE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#SPÉCIALE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#VERSATILE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#VERSATILE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#À_DEUX_MAINS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#À_DEUX_MAINS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
