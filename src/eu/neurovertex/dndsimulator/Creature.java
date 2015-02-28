@@ -10,9 +10,13 @@ import java.util.List;
 public interface Creature {
 	public int getHP();
 
-	public int getInitiaiveMod();
+	public int getInitiativeMod();
 
 	public void play(List<Creature> enemies, List<Creature> friends);
 
-	public void takeAttack(Creature from, int damage);
+    public void tryAttack(Creature to);
+
+	public void takeAttack(Weapon weapon);
+
+    public void defenseOn(Weapon weapon, int roll);
 }

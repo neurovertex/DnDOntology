@@ -12,10 +12,11 @@ public class Main {
 		List<Creature> team1 = new ArrayList<>(), team2 = new ArrayList<>();
 
 		for (int i = 0; i < 5; i++)
-			team1.add(new SimpleCreature("Human " + i, Dice.roll(1, 20, 10), Dice.roll(1, 6, 0), new Dice(1, 8, 0)));
+			team1.add(new SimpleCreature("Human " + i, Dice.roll(1, 20, 10), Dice.roll(1, 6, 0), 3, SimpleWeapon.LongSword()));
+        System.out.println("Created team :\n" + team1);
 
 		for (int i = 0; i < 10; i++)
-			team2.add(new SimpleCreature("Goblin " + i, Dice.roll(1, 10, 2), Dice.roll(1, 6, 0), new Dice(1, 4, 0)));
+			team2.add(new SimpleCreature("Goblin " + i, Dice.roll(1, 10, 2), Dice.roll(1, 6, 0), 1));
 
 		Simulator simulator = new Simulator(team1, team2);
 		simulator.run();

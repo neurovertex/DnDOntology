@@ -21,7 +21,7 @@ public class Main {
             = "SELECT ?monster ?type "
             + "WHERE{ <http://dbpedia.org/resource/List_of_Dungeons_&_Dragons_3.5_edition_monsters> dbpprop:name ?monster . ?monster  dbpprop:type ?type}";
 
-    private static String sparql2 = 
+    //private static String sparql2 =
     
     public static void main(String[] args) {
 

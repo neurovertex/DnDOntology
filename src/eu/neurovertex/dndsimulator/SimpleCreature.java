@@ -9,16 +9,26 @@ import java.util.List;
  */
 public class SimpleCreature implements Creature {
 	private final String name;
-	private final int initMod;
-	private final Dice attackDice;
+	private final int dexMod;
+    private final Dice touchDice;
 	private int health;
+    private final int ca;
+    private final int bba;
+    private Weapon weapon;
 
-	public SimpleCreature(String name, int health, int initMod, Dice attackDice) {
+    public SimpleCreature(String name, int health, int dexMod, int bba, Weapon weapon) {
 		this.name = name;
 		this.health = health;
-		this.initMod = initMod;
-		this.attackDice = attackDice;
-	}
+		this.dexMod = dexMod;
+        this.bba = 10 + dexMod;
+        this.touchDice = new Dice(1,20,0) ;
+        this.ca = 10 + dexMod;
+        this.weapon = weapon;
+    }
+
+    public SimpleCreature(String name, int health, int dexMod, int bba) {
+        this(name, health, dexMod, bba, SimpleWeapon.Dagger());
+    }
 
 	@Override
 	public int getHP() {
@@ -26,30 +36,45 @@ public class SimpleCreature implements Creature {
 	}
 
 	@Override
-	public int getInitiaiveMod() {
-		return initMod;
+	public int getInitiativeMod() {
+		return dexMod;
 	}
 
 	@Override
 	public void play(List<Creature> enemies, List<Creature> friends) {
 		Creature enemy = enemies.get((int) (Math.random() * enemies.size()));
 //		System.out.println(toString() +" attacking");
-		enemy.takeAttack(this, attackDice.roll());
+		tryAttack(enemy);
 	}
 
-	@Override
-	public void takeAttack(Creature from, int damage) {
-//		System.out.printf("Creature %s taking %d damage%n", toString(), damage);
-		health -= damage;
+    @Override
+    public void tryAttack(Creature enemy) {
+        System.out.printf("Creature %s try to touch %s", name, enemy.toString());
+        enemy.defenseOn(weapon, touchDice.roll());
+    }
+
+    @Override
+	public void takeAttack(Weapon weapon) {
+		System.out.printf("Creature %s taking damage from %s%n", name, weapon.toString());
+        // For now, just normal damage from one weapon
+		health -= weapon.damage();
+        // TODO: effects of weaponry (poison, ...)?
 	}
 
-	@Override
+    @Override
+    public void defenseOn(Weapon weapon, int touchRoll) {
+        System.out.printf("Creature %s with a touch roll of %d%n", name, touchRoll);
+        if (ca <= touchRoll)
+            takeAttack(weapon);
+    }
+
+    @Override
 	public String toString() {
 		return "SimpleCreature{" +
 				"name='" + name + '\'' +
 				", health=" + health +
-				", initMod=" + initMod +
-				", attackDice=" + attackDice +
+				", dexMod=" + dexMod +
+				", weapon=" + weapon +
 				'}';
 	}
 }
