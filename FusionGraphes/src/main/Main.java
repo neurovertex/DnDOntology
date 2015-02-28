@@ -21,7 +21,7 @@ public class Main {
             = "SELECT ?monster ?type "
             + "WHERE{ <http://dbpedia.org/resource/List_of_Dungeons_&_Dragons_3.5_edition_monsters> dbpprop:name ?monster . ?monster  dbpprop:type ?type}";
 
-    private static String sparql2 = 
+    private static String sparql2 = "SELECT * WHERE { ?s ?o ?p } LIMIT 10";
     
     public static void main(String[] args) {
 
@@ -30,6 +30,7 @@ public class Main {
         try {
 //            store = new Store("http://fr.dbpedia.org");
             store = new Store("http://dbpedia.org");
+            Store store2 = new Store("http://10.10.116.17:8080");
             //simple query
 //			String response1 = store.query(sparql);
 //			System.out.println(response1);
@@ -40,6 +41,8 @@ public class Main {
 //			String response3 = store.query(sparql,5);
 //			System.out.println(response3);
             //specifying outputformat and soft limit
+            String response1 = store2.query(sparql, Store.OutputFormat.TAB_SEPARATED, 1);
+            System.out.println("" + response1);
             String response4 = store.query(sparql, Store.OutputFormat.TAB_SEPARATED, 1);
             System.out.println("" + response4);
             String[] lines = response4.split("\n");

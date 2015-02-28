@@ -8,8 +8,9 @@ package fusion;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
 /**
  *
@@ -21,8 +22,8 @@ public class Graphe {
     private final int MIDDLE = 1;
     private final int RIGHT = 2;
 
-    private HashMap<String,String> synonymes;
-    
+    private HashMap<String, String> synonymes;
+
     /**
      * @return the noeuds
      */
@@ -30,7 +31,7 @@ public class Graphe {
         return noeuds;
     }
 
-    public class Couple {
+    public final class Couple {
 
         String urileft;
         String uriright;
@@ -40,10 +41,20 @@ public class Graphe {
             this.uriright = uriright;
         }
 
+        Couple(Couple c) {
+            this.urileft = c.urileft;
+            this.uriright = c.uriright;
+        }
+
+        @Override
+        public Object clone() {
+            return new Couple(this);
+        }
+
         public boolean equals(Object o) {
             Couple c = (Couple) o;
-            boolean isEqualLeft = Utils.hammingWithSynonymes(urileft, c.urileft,synonymes) < SEUIL;
-            boolean isEqualRigth = Utils.hammingWithSynonymes(uriright, c.uriright,synonymes) < SEUIL;
+            boolean isEqualLeft = Utils.hammingWithSynonymes(urileft, c.urileft, synonymes) < SEUIL;
+            boolean isEqualRigth = Utils.hammingWithSynonymes(uriright, c.uriright, synonymes) < SEUIL;
 
             return isEqualLeft && isEqualRigth;
         }
@@ -56,11 +67,10 @@ public class Graphe {
 
     private HashMap<String, Set<Couple>> noeuds;
 
-
     public static double SEUIL = 0.2;
 
     // on suppose qu'il n y a pas de doublons
-    public Graphe(String[][] triplets, HashMap<String,String> synonymes) {
+    public Graphe(String[][] triplets, HashMap<String, String> synonymes) {
         this.synonymes = synonymes;
         noeuds = new HashMap<>();
         for (String[] t : triplets) {
@@ -106,7 +116,7 @@ public class Graphe {
         double d;
         for (String k : noeuds.keySet()) {
 //            System.out.println("===> k : "+k);
-            if ((d = Utils.hammingWithSynonymes(k, key,synonymes)) < SEUIL) {
+            if ((d = Utils.hammingWithSynonymes(k, key, synonymes)) < SEUIL) {
 //                System.out.println("in");
                 if (d < min) {
 //                     System.out.println("zoub");
@@ -151,6 +161,71 @@ public class Graphe {
                 couplesSource.add(new Couple(urilefttemp, uririghttemp));
             }
         }
+    }
+
+    // on suppose que g1 est inclu dans g2
+    public Map<String, Set<Couple>> pdifference(/*Graphe g1, */Map<String, Set<Couple>> hm) {
+        Map<String, Set<Couple>> res = new HashMap<>();
+
+        for (String key : hm.keySet()) {
+            if (!noeuds.containsKey(key)) {
+                res.put(key, new HashSet<>());
+            }
+
+            for (Couple c : hm.get(key)) {
+                if (!(noeuds.containsKey(c.urileft) && noeuds.containsKey(c.uriright))) {
+                    if (res.containsKey(key)) {
+                    } else {
+                        res.put(key, new HashSet<>());
+                    }
+                    res.get(key).add((Couple) c.clone());
+                    if (!noeuds.containsKey(c.urileft)) {
+                        if (!res.containsKey(c.urileft)) {
+                            res.put(c.urileft, new HashSet<>());
+                        }
+                    }
+                    if (!noeuds.containsKey(c.uriright)) {
+                        if (!res.containsKey(c.uriright)) {
+                            res.put(c.uriright, new HashSet<>());
+                        }
+                    }
+                }
+            }
+        }
+        return res;
+    }
+
+    /**
+     *
+     * @param g2
+     * @return les triplets correspondants à g2/this au sens ensembliste
+     */
+    public String[][] difference(Graphe g2) {
+        return toTripleStore(pdifference(g2.getNoeuds()));
+    }
+
+    public String[][] toTripleStore() {
+        return toTripleStore(noeuds);
+    }
+
+    public static String[][] toTripleStore(Map<String, Set<Couple>> map) {
+        Stack<String[]> pile = new Stack<>();
+        int size = 0;
+        for (String key : map.keySet()) {
+            for (Couple c : map.get(key)) {
+                size++;
+                String[] triplet = {c.urileft, key, c.uriright};
+                pile.push(triplet);
+            }
+        }
+        String[][] triplets = new String[size][3];
+        size--;
+        while (!pile.empty()) {
+            triplets[size] = pile.pop();
+            size--;
+        }
+        ArrayList l;
+        return triplets;
     }
 
 }

@@ -5,6 +5,7 @@
  */
 
 import fusion.Graphe;
+import java.util.Arrays;
 import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -36,6 +37,7 @@ public class GrapheTest {
         HashMap<String,String> synonymes = new HashMap<>();
         synonymes.put("lol", "kikoo");
         source = new Graphe(triplets,synonymes);
+        source_copy = new Graphe(triplets,synonymes);
         target = new Graphe(triplets2,synonymes);
         targetapprox = new Graphe(triplets3,synonymes);
     }
@@ -45,6 +47,7 @@ public class GrapheTest {
     }
     
     private Graphe source;
+    private Graphe source_copy;
     private Graphe target;
     private Graphe targetapprox;
     private String[][] triplets = 
@@ -52,11 +55,12 @@ public class GrapheTest {
         {"alice","aime","bob"},
         {"bob","deteste","alice"},
         {"alice","subc","Femme"},
-        {"benjamin","lol","deMerde"}
+//        {"benjamin","lol","deMerde"}
     };
     private String[][] triplets2 = 
     {
         {"alice","aime","marcel"},
+        {"alice","aime","bob"}
     };
     private String[][] triplets3 = 
     {
@@ -70,15 +74,33 @@ public class GrapheTest {
 //     @Test
      public void creation() {
          System.out.println(""+source.getNoeuds());
+//         System.out.println(""+source_copy.getNoeuds());
          System.out.println(""+target.getNoeuds());
          source.completeMerge(target);
          System.out.println(""+source.getNoeuds());
+//         System.out.println(""+source_copy.pdifference(source));
      }
-     @Test
+//     @Test
      public void mergeApprox() {
          System.out.println(""+source.getNoeuds());
          System.out.println(""+targetapprox.getNoeuds());
          source.completeMerge(targetapprox);
          System.out.println(""+source.getNoeuds());
+     }
+     
+     @Test 
+     public void differenceTest(){
+         
+         System.out.println(""+source.getNoeuds());
+         source.completeMerge(target);
+         System.out.println(""+target.getNoeuds());
+         System.out.println(""+source.getNoeuds());
+         System.out.println("diff "+source_copy.pdifference(source.getNoeuds()));
+         System.out.println(""+Arrays.deepToString(source_copy.difference(source)));
+     }
+     
+//     @Test
+     public void toTripleStoreTest(){
+         System.out.println(""+Arrays.deepToString(source.toTripleStore()));
      }
 }
