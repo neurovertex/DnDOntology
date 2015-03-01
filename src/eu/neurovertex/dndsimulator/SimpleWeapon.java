@@ -5,13 +5,21 @@ package eu.neurovertex.dndsimulator;
  */
 public class SimpleWeapon implements Weapon {
 
-    private final Dice damageDice;
-    private final String name;
+    private final Dice      damageDice;
+    private final String    name;
+    private final int       multiplier;
+    private final WeaponType type;
     // TODO: List of effects (poison,...)
 
-    public SimpleWeapon(String name, Dice damageDice) {
-        this.name = name;
+    public SimpleWeapon(String name, Dice damageDice, int multiplier, WeaponType type) {
+        this.name       = name;
         this.damageDice = damageDice;
+        this.multiplier = multiplier;
+        this.type       = type;
+    }
+
+    public SimpleWeapon(String name, Dice damageDice) {
+        this(name, damageDice, 2, WeaponType.MELEE);
     }
 
     public static SimpleWeapon Dagger() {
@@ -26,6 +34,19 @@ public class SimpleWeapon implements Weapon {
     public int damage() {
         return damageDice.roll();
     }
+
+    @Override
+    public int getCriticalMultiplier() {
+        return multiplier;
+    }
+
+    @Override
+    public WeaponType getType() {
+        return type;
+    }
+
+    @Override
+    public String getDescription() { return name + "(" + damageDice.getDescription() + ")"; }
 
     @Override
     public String toString() {

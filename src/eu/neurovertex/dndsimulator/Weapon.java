@@ -5,6 +5,14 @@ package eu.neurovertex.dndsimulator;
  */
 public interface Weapon {
 
+    public enum WeaponType { MELEE, RANGED}
+
     public int damage();
+
+    public int getCriticalMultiplier();
+
+    public WeaponType getType();
+
+    public String getDescription();
 
 }

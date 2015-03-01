@@ -43,7 +43,7 @@ public class Simulator implements Runnable {
 
 			if (!iterator.hasNext()) {
 				iterator = creatures.iterator();
-				System.out.println("Turn " + turn++ + " passed");
+				System.out.println("\n Turn " + turn++ + " passed \n");
 			}
 		}
 
