@@ -1,24 +1,32 @@
 package eu.neurovertex.dndsimulator;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.hp.hpl.jena.ontology.OntModel;
+import com.hp.hpl.jena.ontology.OntModelSpec;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * @author Neurovertex
  *         Date: 12/02/2015, 14:39
  */
 public class Main {
-	public static void main(String[] args) {
-		List<Creature> team1 = new ArrayList<>(), team2 = new ArrayList<>();
+	public static final String DEFAULTFILE = "dnd.owl", FORMAT = "TTL";
 
-		for (int i = 0; i < 5; i++)
-			team1.add(new SimpleCreature("Human " + i, Dice.roll(1, 20, 10), Dice.roll(1, 6, 0), 3, SimpleWeapon.LongSword()));
-        System.out.println("Created team :\n" + team1);
+	public static void main(String[] args) throws IOException {
+		/**
+		 * @see http://jena.apache.org/documentation/inference/#owl
+		 */
+		OntModel ontology = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+		File file = new File(args.length > 0 ? args[0] : DEFAULTFILE);
+		try (FileReader reader = new FileReader(file)) {
+			ontology.read(reader, FORMAT);
+		}
 
-		for (int i = 0; i < 10; i++)
-			team2.add(new SimpleCreature("Goblin " + i, Dice.roll(1, 10, 2), Dice.roll(1, 6, 0), 1));
+		System.out.println(ontology.getOntClass(ontology.expandPrefix("dnd:Possession")));
 
-		Simulator simulator = new Simulator(team1, team2);
-		simulator.run();
+		ontology.getNsPrefixMap().entrySet().forEach(System.out::println);
 	}
 }
