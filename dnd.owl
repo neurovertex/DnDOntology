@@ -56,6 +56,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_climat -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_climat">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Climat"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_joueur -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_joueur">
@@ -122,8 +131,9 @@
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_temperature -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_temperature">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Temperature"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_climat"/>
     </owl:ObjectProperty>
     
 
@@ -236,16 +246,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#AQUATIQUE -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#AQUATIQUE">
-        <rdfs:label xml:lang="en">Aquatic</rdfs:label>
-        <rdfs:label xml:lang="fr">Aquatique</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Alignement -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Alignement">
@@ -258,6 +258,16 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Antagoniste">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Personnage_non_Joueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Aquatique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Aquatique">
+        <rdfs:label xml:lang="en">Aquatic</rdfs:label>
+        <rdfs:label xml:lang="fr">Aquatique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain"/>
     </owl:Class>
     
 
@@ -375,16 +385,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Collines -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Collines">
-        <rdfs:label xml:lang="en">Hills</rdfs:label>
-        <rdfs:label xml:lang="fr">Collines</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Caracteristique -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Caracteristique">
@@ -431,6 +431,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Collines -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Collines">
+        <rdfs:label xml:lang="en">Hills</rdfs:label>
+        <rdfs:label xml:lang="fr">Collines</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Consistance -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Consistance">
@@ -472,14 +482,14 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_alignement"/>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Morale"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Loyaute"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_alignement"/>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Loyaute"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Morale"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -538,21 +548,21 @@
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Desert -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Desert">
-        <rdfs:label xml:lang="en">Desert</rdfs:label>
-        <rdfs:label xml:lang="fr">Désert</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#De -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#De">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Materiel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Papier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Desert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Desert">
+        <rdfs:label xml:lang="en">Desert</rdfs:label>
+        <rdfs:label xml:lang="fr">Désert</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain"/>
     </owl:Class>
     
 
@@ -573,6 +583,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Elemental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Elemental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Entre_moins_neuf_et_zero_inclus -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Entre_moins_neuf_et_zero_inclus">
@@ -584,10 +602,10 @@
                         <owl:onDatatype rdf:resource="&xsd;int"/>
                         <owl:withRestrictions rdf:parseType="Collection">
                             <rdf:Description>
-                                <xsd:maxExclusive rdf:datatype="&xsd;int">1</xsd:maxExclusive>
+                                <xsd:minExclusive rdf:datatype="&xsd;int">-10</xsd:minExclusive>
                             </rdf:Description>
                             <rdf:Description>
-                                <xsd:minExclusive rdf:datatype="&xsd;int">-10</xsd:minExclusive>
+                                <xsd:maxExclusive rdf:datatype="&xsd;int">1</xsd:maxExclusive>
                             </rdf:Description>
                         </owl:withRestrictions>
                     </rdfs:Datatype>
@@ -628,16 +646,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FORETS -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FORETS">
-        <rdfs:label xml:lang="en">Forests</rdfs:label>
-        <rdfs:label xml:lang="fr">Forêts</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Fleche -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Fleche">
@@ -656,6 +664,16 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Force">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Caracteristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Forets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Forets">
+        <rdfs:label xml:lang="en">Forests</rdfs:label>
+        <rdfs:label xml:lang="fr">Forêts</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain"/>
     </owl:Class>
     
 
@@ -690,10 +708,10 @@
                         <owl:onDatatype rdf:resource="&xsd;int"/>
                         <owl:withRestrictions rdf:parseType="Collection">
                             <rdf:Description>
-                                <xsd:maxExclusive rdf:datatype="&xsd;int">-10</xsd:maxExclusive>
+                                <xsd:minExclusive rdf:datatype="&xsd;int">-50</xsd:minExclusive>
                             </rdf:Description>
                             <rdf:Description>
-                                <xsd:minExclusive rdf:datatype="&xsd;int">-50</xsd:minExclusive>
+                                <xsd:maxExclusive rdf:datatype="&xsd;int">-10</xsd:maxExclusive>
                             </rdf:Description>
                         </owl:withRestrictions>
                     </rdfs:Datatype>
@@ -775,30 +793,20 @@
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MARAIS -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MARAIS">
-        <rdfs:label xml:lang="en">Marshes</rdfs:label>
-        <rdfs:label xml:lang="fr">Marais</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MONTAGNES -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MONTAGNES">
-        <rdfs:label xml:lang="en">Mountains</rdfs:label>
-        <rdfs:label xml:lang="fr">Montagnes</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Maitre_du_Jeu -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Maitre_du_Jeu">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Joueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Marais -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Marais">
+        <rdfs:label xml:lang="en">Marshes</rdfs:label>
+        <rdfs:label xml:lang="fr">Marais</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain"/>
     </owl:Class>
     
 
@@ -829,6 +837,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Montagnes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Montagnes">
+        <rdfs:label xml:lang="en">Mountains</rdfs:label>
+        <rdfs:label xml:lang="fr">Montagnes</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Morale -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Morale">
@@ -849,16 +867,6 @@
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Possession"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PLAINES -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PLAINES">
-        <rdfs:label xml:lang="en">Plains</rdfs:label>
-        <rdfs:label xml:lang="fr">Plaines</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
     </owl:Class>
     
 
@@ -918,6 +926,16 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Personnage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Plaines -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Plaines">
+        <rdfs:label xml:lang="en">Plains</rdfs:label>
+        <rdfs:label xml:lang="fr">Plaines</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain"/>
     </owl:Class>
     
 
@@ -1013,28 +1031,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Tranche_de_Valeur -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Tranche_de_Valeur"/>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#UNDERGROUND -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Urbain -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#UNDERGROUND">
-        <rdfs:label xml:lang="en">Underground</rdfs:label>
-        <rdfs:label xml:lang="fr">Sous-terrains</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#URBAIN -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#URBAIN">
+    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Urbain">
         <rdfs:label xml:lang="en">Urban</rdfs:label>
         <rdfs:label xml:lang="fr">Urbain</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain"/>
     </owl:Class>
     
 
@@ -1201,10 +1217,10 @@
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#COLLINES_CHAUDES -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#COLLINES_CHAUDES">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#COLLINES"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Chaud"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Collines"/>
         <rdfs:label xml:lang="en">Warm hills</rdfs:label>
-        <rdfs:label xml:lang="fr">Collines chaudes</rdfs:label>
+        <rdfs:label xml:lang="fr">COLLINES chaudes</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1212,7 +1228,7 @@
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#COLLINES_FROIDES -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#COLLINES_FROIDES">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#COLLINES"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Collines"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Froid"/>
         <rdfs:label xml:lang="en">Cold hills</rdfs:label>
         <rdfs:label xml:lang="fr">Collines froides</rdfs:label>
@@ -1223,10 +1239,83 @@
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#COLLINES_TEMPEREES -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#COLLINES_TEMPEREES">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#COLLINES"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Collines"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Tempere"/>
         <rdfs:label xml:lang="en">Temperate hills</rdfs:label>
         <rdfs:label xml:lang="fr">Collines tempérées</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#DESERT_CHAUD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#DESERT_CHAUD">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Chaud"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Desert"/>
+        <rdfs:label xml:lang="en">Warm desert</rdfs:label>
+        <rdfs:label xml:lang="fr">Désert chaud</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#DESERT_FROID -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#DESERT_FROID">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Desert"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Froid"/>
+        <rdfs:label xml:lang="en">Cold desert</rdfs:label>
+        <rdfs:label xml:lang="fr">Désert froid</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#DESERT_TEMPERE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#DESERT_TEMPERE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Desert"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Tempere"/>
+        <rdfs:label xml:lang="en">Temperate desert</rdfs:label>
+        <rdfs:label xml:lang="fr">Désert tempéré</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ELEMENTAL_AIR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ELEMENTAL_AIR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Elemental"/>
+        <rdfs:label xml:lang="en">Elemental Plane of Air</rdfs:label>
+        <rdfs:label xml:lang="fr">Plan élémental d&apos;air</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ELEMENTAL_EAU -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ELEMENTAL_EAU">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Elemental"/>
+        <rdfs:label xml:lang="en">Elemental Plane of Water</rdfs:label>
+        <rdfs:label xml:lang="fr">Plan élémental d&apos;eau</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ELEMENTAL_FEU -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ELEMENTAL_FEU">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Elemental"/>
+        <rdfs:label xml:lang="en">Elemental Plane of Fire</rdfs:label>
+        <rdfs:label xml:lang="fr">Plan élémental de feu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ELEMENTAL_TERRE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ELEMENTAL_TERRE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Elemental"/>
+        <rdfs:label xml:lang="en">Elemental Plane of Earth</rdfs:label>
+        <rdfs:label xml:lang="fr">Plan élémental de terre</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1241,10 +1330,53 @@
     
 
 
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ETHEREAL -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ETHEREAL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
+        <rdfs:label xml:lang="en">Ethereal Plane</rdfs:label>
+        <rdfs:label xml:lang="fr">Plan éthéré</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FINESSE -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FINESSE">
         <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Propriete_dArme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FORETS_CHAUDES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FORETS_CHAUDES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Chaud"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Forets"/>
+        <rdfs:label xml:lang="en">Warm forests</rdfs:label>
+        <rdfs:label xml:lang="fr">Forêts Chaudes</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FORETS_FROIDES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FORETS_FROIDES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Forets"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Froid"/>
+        <rdfs:label xml:lang="en">Cold Forests</rdfs:label>
+        <rdfs:label xml:lang="fr">Forêt froides</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FORETS_TEMPEREES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FORETS_TEMPEREES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Forets"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Tempere"/>
+        <rdfs:label xml:lang="en">Temperate Forests</rdfs:label>
+        <rdfs:label xml:lang="fr">Forêts tempérées</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1291,12 +1423,111 @@
     
 
 
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MARAIS_CHAUDS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MARAIS_CHAUDS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Chaud"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Marais"/>
+        <rdfs:label xml:lang="en">Warm marshes</rdfs:label>
+        <rdfs:label xml:lang="fr">Marais chauds</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MARAIS_FROIDS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MARAIS_FROIDS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Froid"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Marais"/>
+        <rdfs:label xml:lang="en">Cold marshes</rdfs:label>
+        <rdfs:label xml:lang="fr">Marais froids</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MARAIS_TEMPERES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MARAIS_TEMPERES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Marais"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Tempere"/>
+        <rdfs:label xml:lang="en">Temperate marshes</rdfs:label>
+        <rdfs:label xml:lang="fr">Marais tempérés</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MAUVAIS -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MAUVAIS">
         <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Morale"/>
         <rdfs:label xml:lang="en">Evil</rdfs:label>
         <rdfs:label xml:lang="fr">Mauvais</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MILIEU_AQUATIQUE_CHAUD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MILIEU_AQUATIQUE_CHAUD">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Aquatique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Chaud"/>
+        <rdfs:label xml:lang="en">Warm aquatic</rdfs:label>
+        <rdfs:label xml:lang="fr">Milieu aquatique chaud</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MILIEU_AQUATIQUE_FROID -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MILIEU_AQUATIQUE_FROID">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Aquatique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Froid"/>
+        <rdfs:label xml:lang="en">Cold aquatic</rdfs:label>
+        <rdfs:label xml:lang="fr">Milieu aquatique froid</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MILIEU_AQUATIQUE_TEMPERE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MILIEU_AQUATIQUE_TEMPERE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Aquatique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Tempere"/>
+        <rdfs:label xml:lang="en">Temperate aquatic</rdfs:label>
+        <rdfs:label xml:lang="fr">Milieu aquatique tempéré</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MONTAGNES_CHAUDES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MONTAGNES_CHAUDES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Chaud"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Montagnes"/>
+        <rdfs:label xml:lang="en">Warm mountains</rdfs:label>
+        <rdfs:label xml:lang="fr">Montagnes chaudes</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MONTAGNES_FROIDES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MONTAGNES_FROIDES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Froid"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Montagnes"/>
+        <rdfs:label xml:lang="en">Cold moutains</rdfs:label>
+        <rdfs:label xml:lang="fr">Montagnes froides</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MONTAGNES_TEMPEREES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MONTAGNES_TEMPEREES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Montagnes"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Tempere"/>
+        <rdfs:label xml:lang="en">Temperate mountains</rdfs:label>
+        <rdfs:label xml:lang="fr">Montagnes tempérées</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1329,6 +1560,39 @@
     
 
 
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PLAINES_CHAUDES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PLAINES_CHAUDES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Chaud"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Plaines"/>
+        <rdfs:label xml:lang="en">Warm plains</rdfs:label>
+        <rdfs:label xml:lang="fr">Plaines chaudes</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PLAINES_FROIDES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PLAINES_FROIDES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Froid"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Plaines"/>
+        <rdfs:label xml:lang="en">Cold plains</rdfs:label>
+        <rdfs:label xml:lang="fr">Plaines froides</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PLAINES_TEMPEREES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PLAINES_TEMPEREES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Plaines"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Tempere"/>
+        <rdfs:label xml:lang="en">Temperate plains</rdfs:label>
+        <rdfs:label xml:lang="fr">Plaines tempérées</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PORTEE -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PORTEE">
@@ -1337,10 +1601,30 @@
     
 
 
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#SHADOW -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#SHADOW">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
+        <rdfs:label xml:lang="en">Shadow</rdfs:label>
+        <rdfs:label xml:lang="fr">Ténèbres</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#SPECIALE -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#SPECIALE">
         <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Propriete_dArme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#UNDERGROUND -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#UNDERGROUND">
+        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement"/>
+        <rdfs:label xml:lang="en">Underground</rdfs:label>
+        <rdfs:label xml:lang="fr">Sous-terrains</rdfs:label>
     </owl:NamedIndividual>
     
 
