@@ -22,7 +22,7 @@ public class Graphe {
     private final int MIDDLE = 1;
     private final int RIGHT = 2;
 
-    private HashMap<String, String> synonymes;
+    private Map<String, Set<String>> synonymes;
 
     /**
      * @return the noeuds
@@ -70,7 +70,7 @@ public class Graphe {
     public static double SEUIL = 0.2;
 
     // on suppose qu'il n y a pas de doublons
-    public Graphe(String[][] triplets, HashMap<String, String> synonymes) {
+    public Graphe(String[][] triplets, Map<String, Set<String>> synonymes) {
         this.synonymes = synonymes;
         noeuds = new HashMap<>();
         for (String[] t : triplets) {

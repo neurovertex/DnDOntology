@@ -7,6 +7,8 @@
 import fusion.Graphe;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -34,8 +36,10 @@ public class GrapheTest {
     
     @Before
     public void setUp() {
-        HashMap<String,String> synonymes = new HashMap<>();
-        synonymes.put("lol", "kikoo");
+        HashMap<String,Set<String>> synonymes = new HashMap<>();
+        Set set = new HashSet<String>();
+        set.add("kikoo");
+        synonymes.put("lol",set);
         source = new Graphe(triplets,synonymes);
         source_copy = new Graphe(triplets,synonymes);
         target = new Graphe(triplets2,synonymes);
@@ -97,6 +101,7 @@ public class GrapheTest {
          System.out.println(""+source.getNoeuds());
          System.out.println("diff "+source_copy.pdifference(source.getNoeuds()));
          System.out.println(""+Arrays.deepToString(source_copy.difference(source)));
+     
      }
      
 //     @Test

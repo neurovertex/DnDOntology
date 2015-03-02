@@ -7,6 +7,8 @@ package fusion;
  */
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -14,24 +16,39 @@ import java.util.HashMap;
  */
 public class Utils {
 
-    public static double hammingWithSynonymes(String s1, String s2, HashMap<String, String> synonymes) {
-        if(s1 == null || s2 == null){
+//    public static double hammingWithSynonymes(String s1, String s2, HashMap<String, String> synonymes) {
+//        if (s1 == null || s2 == null) {
+//            return 1;
+//        }
+//        String synonyme;
+//        if ((synonyme = synonymes.get(s1)) != null) {
+//            if (synonyme.equals(s2)) {
+//                return 0;
+//            }
+//        }
+//
+//        if ((synonyme = synonymes.get(s2)) != null) {
+//            if (synonyme.equals(s1)) {
+//                return 0;
+//            }
+//        }
+//
+//        return hamming(s1, s2);
+//    }
+
+    public static double hammingWithSynonymes(String s1, String s2, Map<String, Set<String>> synonymes) {
+        if (s1 == null || s2 == null) {
             return 1;
         }
-        String synonyme;
-        if ((synonyme = synonymes.get(s1)) != null) {
-            if (synonyme.equals(s2)) {
-                return 0;
-            }
+        if (synonymes.get(s1).contains(s2)) {
+            return 0;
         }
-        
-        if ((synonyme = synonymes.get(s2)) != null) {
-            if (synonyme.equals(s1)) {
-                return 0;
-            }
+
+        if (synonymes.get(s2).contains(s1)) {
+            return 0;
         }
-        
-        return hamming(s1,s2);
+
+        return hamming(s1, s2);
     }
 
     public static double hamming(String s1, String s2) {
