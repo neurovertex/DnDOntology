@@ -1,8 +1,8 @@
-*
-!src
+/*
+!/src/
+!/parser/
+!/lib/
 !*.java
 !*.owl
 !*.ttl
-!parser
-!lib
 !*.jar

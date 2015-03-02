@@ -539,7 +539,7 @@
     <name>ABOLETH MAGE</name>
     <type>Aberration</type>
     <taille>Huge</taille>
-    <dv>8d8+56 plus 10d4+70 (177 hp)</dv>
+      <dv>8d8+56+10d4+70 (177 hp)</dv>
     <init>+7</init>
     <depl>
       <marche>10</marche>
@@ -1670,7 +1670,7 @@
         <dgts>1d8+3/x3</dgts>
       </atq>
     </atqs>
-    <skill>Constrict 2d6+1 plus 1d6 fire</skill>
+      <skill>Constrict 2d6+1+1d6 fire</skill>
     <skill> heat</skill>
     <skill> improved grab</skill>
     <quality>Damage reduction 10/magic</quality>
@@ -2738,7 +2738,7 @@
       </atq>
     </atqs>
     <skill>Acid</skill>
-    <skill> constrict 2d6+4 plus 2d6 acid</skill>
+      <skill>constrict 2d6+4+2d6 acid</skill>
     <skill> improved grab</skill>
     <quality>Blindsight 60 ft.</quality>
     <quality> split</quality>
@@ -2824,7 +2824,7 @@
     <name>BLUE</name>
     <type>Humanoid</type>
     <taille>Small</taille>
-    <dv>1d4+2 plus 4 (10 hp)</dv>
+      <dv>1d4+2+4 (10 hp)</dv>
     <init>+1</init>
     <depl>
       <marche>30</marche>
@@ -8080,7 +8080,7 @@
       </atq>
     </atqs>
     <skill>Acid</skill>
-    <skill> constrict 2d8+12 plus 2d6 acid</skill>
+      <skill>constrict 2d8+12+2d6 acid</skill>
     <skill> improved grab</skill>
     <quality>Blindsight 60 ft.</quality>
     <quality> split</quality>
@@ -9270,7 +9270,7 @@
         <dgts>1d6+1/x3</dgts>
       </atq>
     </atqs>
-    <skill>Constrict 1d4 plus 1d6 fire</skill>
+      <skill>Constrict 1d4+1d6 fire</skill>
     <skill> heat</skill>
     <skill> improved grab</skill>
     <quality>Darkvision 60 ft.</quality>
@@ -9881,7 +9881,7 @@
     <name>FROST GIANT JARL</name>
     <type>Giant</type>
     <taille>Large</taille>
-    <dv>14d8+84 plus 8d10+48 (231 hp)</dv>
+      <dv>14d8+84+8d10+48 (231 hp)</dv>
     <init>+5</init>
     <depl>
       <marche>30</marche>
@@ -12075,7 +12075,7 @@
       </atq>
     </atqs>
     <skill>Acid</skill>
-    <skill> constrict 1d6+1 plus 1d6 acid</skill>
+      <skill>constrict 1d6+1+1d6 acid</skill>
     <skill> improved grab</skill>
     <quality>Blindsight 60 ft.</quality>
     <quality> immunity to cold and fire</quality>
@@ -14407,7 +14407,7 @@
     <name>HOUND ARCHON HERO</name>
     <type>Outsider</type>
     <taille>Medium</taille>
-    <dv>6d8+18 plus 11d10+33 (143 hp)</dv>
+      <dv>6d8+18+11d10+33 (143 hp)</dv>
     <init>+4</init>
     <depl>
       <marche>30</marche>
@@ -15149,7 +15149,7 @@
       <comp class="Handle">Animal</comp>
       <comp class="Ride">+4</comp>
     </comps>
-    <feat>Weapon Focus (longsword) plus Human Extra Feat</feat>
+      <feat>Weapon Focus (longsword)+Human Extra Feat</feat>
     <environ>Any</environ>
     <puiss>1/2</puiss>
   </monster>
@@ -19854,7 +19854,7 @@
     <name>MUMMY LORD</name>
     <type>Undead</type>
     <taille>Medium</taille>
-    <dv>8d12 plus 10d8 (97 hp)</dv>
+      <dv>8d12+10d8 (97 hp)</dv>
     <init>+5</init>
     <depl>
       <marche>15</marche>
@@ -20778,7 +20778,7 @@
         <dgts>melee</dgts>
       </atq>
     </atqs>
-    <skill>Constrict 2d8+3 plus 1d8 fire</skill>
+      <skill>Constrict 2d8+3+1d8 fire</skill>
     <skill> heat</skill>
     <skill> improved grab</skill>
     <skill> spell-like abilities</skill>
@@ -20914,7 +20914,7 @@
       </atq>
     </atqs>
     <skill>Acid</skill>
-    <skill> constrict 2d4+3 plus 1d4 acid</skill>
+      <skill>constrict 2d4+3+1d4 acid</skill>
     <skill> improved grab</skill>
     <quality>Blindsight 60 ft.</quality>
     <quality> split</quality>
@@ -21058,7 +21058,7 @@
     <name>OGRE BARBARIAN</name>
     <type>Giant</type>
     <taille>Large</taille>
-    <dv>4d8+19 plus 4d12+16 (79 hp)</dv>
+      <dv>4d8+19+4d12+16 (79 hp)</dv>
     <init>+0</init>
     <depl>
       <marche>40</marche>
