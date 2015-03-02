@@ -2,4 +2,7 @@
 !src
 !*.java
 !*.owl
+!*.ttl
 !parser
+!lib
+!*.jar

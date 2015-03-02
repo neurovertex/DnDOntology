@@ -6,16 +6,18 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY dnd "http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#" >
 ]>
 
 
-<rdf:RDF xmlns="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#"
-     xml:base="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12"
+<rdf:RDF xmlns="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#"
+     xml:base="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12"/>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dnd="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons"/>
     
 
 
@@ -30,152 +32,208 @@
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_PV_courant -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_PV_max -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_PV_courant">
+    <owl:ObjectProperty rdf:about="&dnd;a_pour_PV_max">
+        <rdfs:domain rdf:resource="&dnd;Creature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_alignement -->
+
+    <owl:ObjectProperty rdf:about="&dnd;a_pour_alignement">
+        <rdfs:domain rdf:resource="&dnd;Creature"/>
+        <rdfs:domain rdf:resource="&dnd;Environnement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_caracteristique -->
+
+    <owl:ObjectProperty rdf:about="&dnd;a_pour_caracteristique">
+        <rdfs:range rdf:resource="&dnd;Caracteristique"/>
+        <rdfs:domain rdf:resource="&dnd;Creature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_climat -->
+
+    <owl:ObjectProperty rdf:about="&dnd;a_pour_climat">
+        <rdfs:range rdf:resource="&dnd;Climat"/>
+        <rdfs:domain rdf:resource="&dnd;Terrain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_joueur -->
+
+    <owl:ObjectProperty rdf:about="&dnd;a_pour_joueur">
+        <rdfs:domain rdf:resource="&dnd;Jeu"/>
+        <rdfs:range rdf:resource="&dnd;Joueur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_lancer -->
+
+    <owl:ObjectProperty rdf:about="&dnd;a_pour_lancer">
+        <rdfs:domain rdf:resource="&dnd;Attribut"/>
+        <rdfs:range rdf:resource="&dnd;De"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_materiel -->
+
+    <owl:ObjectProperty rdf:about="&dnd;a_pour_materiel">
+        <rdfs:domain rdf:resource="&dnd;Jeu"/>
+        <rdfs:range rdf:resource="&dnd;Materiel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_munition -->
+
+    <owl:ObjectProperty rdf:about="&dnd;a_pour_munition">
+        <rdfs:domain rdf:resource="&dnd;Arme_a_Distance"/>
+        <rdfs:range rdf:resource="&dnd;Munition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_nom -->
+
+    <owl:ObjectProperty rdf:about="&dnd;a_pour_nom">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+        <rdfs:domain rdf:resource="&dnd;Creature"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_PV_max -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_propriete -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_PV_max">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    <owl:ObjectProperty rdf:about="&dnd;a_pour_propriete">
+        <rdfs:domain rdf:resource="&dnd;Arme"/>
+        <rdfs:range rdf:resource="&dnd;Propriete_dArme"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_caractéristique -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_quete -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_caractéristique">
-        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    <owl:ObjectProperty rdf:about="&dnd;a_pour_quete">
+        <rdfs:domain rdf:resource="&dnd;Joueur"/>
+        <rdfs:range rdf:resource="&dnd;Quete"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_joueur -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_temperature -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_joueur">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Joueur"/>
+    <owl:ObjectProperty rdf:about="&dnd;a_pour_temperature">
+        <rdfs:range rdf:resource="&dnd;Temperature"/>
+        <rdfs:domain rdf:resource="&dnd;Terrain"/>
+        <rdfs:subPropertyOf rdf:resource="&dnd;a_pour_climat"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_lancer -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#equipe -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_lancer">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Attribut"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    <owl:ObjectProperty rdf:about="&dnd;equipe">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <owl:inverseOf rdf:resource="&dnd;est_equipe_de"/>
+        <rdfs:subPropertyOf rdf:resource="&dnd;est_possede_par"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_matériel -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#est_equipe_de -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_matériel">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Matériel"/>
+    <owl:ObjectProperty rdf:about="&dnd;est_equipe_de">
+        <rdfs:range rdf:resource="&dnd;Equipement"/>
+        <rdfs:domain rdf:resource="&dnd;Personnage"/>
+        <rdfs:subPropertyOf rdf:resource="&dnd;possede"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_nom -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#est_incarne_par -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_nom">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    <owl:ObjectProperty rdf:about="&dnd;est_incarne_par"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#est_possede_par -->
+
+    <owl:ObjectProperty rdf:about="&dnd;est_possede_par"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#est_une_caracteristique_de -->
+
+    <owl:ObjectProperty rdf:about="&dnd;est_une_caracteristique_de">
+        <owl:inverseOf rdf:resource="&dnd;a_pour_caracteristique"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_propriété -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#est_une_munition_de -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_propriété">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    <owl:ObjectProperty rdf:about="&dnd;est_une_munition_de">
+        <owl:inverseOf rdf:resource="&dnd;a_pour_munition"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_quête -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#incarne -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_quête">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Joueur"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Quête"/>
+    <owl:ObjectProperty rdf:about="&dnd;incarne">
+        <rdfs:range rdf:resource="&dnd;Creature"/>
+        <rdfs:domain rdf:resource="&dnd;Joueur"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_incarné_par -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#oppose_a -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_incarné_par"/>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_possédé_par -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_possédé_par"/>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_une_caractéristique_de -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_une_caractéristique_de">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#a_pour_caractéristique"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_équipé_de -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_équipé_de">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#possède"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Équipement"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#incarne -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#incarne">
-        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Joueur"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#opposé_a -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#opposé_a">
+    <owl:ObjectProperty rdf:about="&dnd;oppose_a">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage"/>
+        <rdfs:domain rdf:resource="&dnd;Personnage"/>
+        <rdfs:range rdf:resource="&dnd;Personnage"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#possède -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#possede -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#possède">
+    <owl:ObjectProperty rdf:about="&dnd;possede">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Possession"/>
+        <rdfs:domain rdf:resource="&dnd;Creature"/>
+        <rdfs:range rdf:resource="&dnd;Possession"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#équipe -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#équipe">
-        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_possédé_par"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#est_équipé_de"/>
-    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#a_pour_PV_courant -->
+
+    <owl:DatatypeProperty rdf:about="&dnd;a_pour_PV_courant">
+        <rdfs:domain rdf:resource="&dnd;Creature"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -190,368 +248,884 @@
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Alignement -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Alignement -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Alignement">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Attribut"/>
+    <owl:Class rdf:about="&dnd;Alignement">
+        <rdfs:subClassOf rdf:resource="&dnd;Attribut"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Antagoniste -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Antagoniste -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Antagoniste">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage_non_Joueur"/>
+    <owl:Class rdf:about="&dnd;Antagoniste">
+        <rdfs:subClassOf rdf:resource="&dnd;Personnage_non_Joueur"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Aquatique -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme"/>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_Corps_à_corps -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_Corps_à_corps">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Équipement"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_à_Distance"/>
+    <owl:Class rdf:about="&dnd;Aquatique">
+        <rdfs:label xml:lang="en">Aquatic</rdfs:label>
+        <rdfs:label xml:lang="fr">Aquatique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Terrain"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_Naturelle -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Arbalete -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_Naturelle">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme"/>
+    <owl:Class rdf:about="&dnd;Arbalete">
+        <rdfs:subClassOf rdf:resource="&dnd;Arme_a_Distance"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_munition"/>
+                <owl:someValuesFrom rdf:resource="&dnd;Carreau"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_à_Distance -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Arc -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme_à_Distance">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Arme"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Équipement"/>
+    <owl:Class rdf:about="&dnd;Arc">
+        <rdfs:subClassOf rdf:resource="&dnd;Arme_a_Distance"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_munition"/>
+                <owl:someValuesFrom rdf:resource="&dnd;Fleche"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Arme -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Équipement"/>
+    <owl:Class rdf:about="&dnd;Arme">
+        <rdfs:label xml:lang="en">Weapon</rdfs:label>
+        <rdfs:label xml:lang="fr">Arme</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Intermédiaire -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Arme_Corps_a_Corps -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Intermédiaire">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Lourde"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Légère"/>
+    <owl:Class rdf:about="&dnd;Arme_Corps_a_Corps">
+        <rdfs:subClassOf rdf:resource="&dnd;Arme"/>
+        <rdfs:subClassOf rdf:resource="&dnd;Equipement"/>
+        <owl:disjointWith rdf:resource="&dnd;Arme_a_Distance"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Lourde -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Arme_Naturelle -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Lourde">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Légère"/>
+    <owl:Class rdf:about="&dnd;Arme_Naturelle">
+        <rdfs:subClassOf rdf:resource="&dnd;Arme"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Légère -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Arme_a_Distance -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure_Légère">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Armure"/>
+    <owl:Class rdf:about="&dnd;Arme_a_Distance">
+        <rdfs:subClassOf rdf:resource="&dnd;Arme"/>
+        <rdfs:subClassOf rdf:resource="&dnd;Equipement"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Attribut -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Armure -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Attribut"/>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Attribut"/>
+    <owl:Class rdf:about="&dnd;Armure">
+        <rdfs:subClassOf rdf:resource="&dnd;Equipement"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Charisme -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Armure_Intermediaire -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Charisme">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique"/>
+    <owl:Class rdf:about="&dnd;Armure_Intermediaire">
+        <rdfs:subClassOf rdf:resource="&dnd;Armure"/>
+        <owl:disjointWith rdf:resource="&dnd;Armure_Legere"/>
+        <owl:disjointWith rdf:resource="&dnd;Armure_Lourde"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Consistance -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Armure_Legere -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Consistance">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique"/>
+    <owl:Class rdf:about="&dnd;Armure_Legere">
+        <rdfs:subClassOf rdf:resource="&dnd;Armure"/>
+        <owl:disjointWith rdf:resource="&dnd;Armure_Lourde"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Crayon -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Armure_Lourde -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Crayon">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Matériel"/>
+    <owl:Class rdf:about="&dnd;Armure_Lourde">
+        <rdfs:subClassOf rdf:resource="&dnd;Armure"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Attribut -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    <owl:Class rdf:about="&dnd;Attribut"/>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature_morte -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Bille -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature_morte">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature_vivante"/>
+    <owl:Class rdf:about="&dnd;Bille">
+        <rdfs:subClassOf rdf:resource="&dnd;Munition"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature_vivante -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Caracteristique -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature_vivante">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    <owl:Class rdf:about="&dnd;Caracteristique">
+        <rdfs:subClassOf rdf:resource="&dnd;Attribut"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dextérité -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Carreau -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dextérité">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique"/>
+    <owl:Class rdf:about="&dnd;Carreau">
+        <rdfs:subClassOf rdf:resource="&dnd;Munition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;est_une_munition_de"/>
+                <owl:someValuesFrom rdf:resource="&dnd;Arbalete"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Donjons_et_Dragons -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Charisme -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Donjons_et_Dragons">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu_de_Rôle"/>
+    <owl:Class rdf:about="&dnd;Charisme">
+        <rdfs:subClassOf rdf:resource="&dnd;Caracteristique"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Chaud -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Matériel"/>
+    <owl:Class rdf:about="&dnd;Chaud">
+        <rdfs:label xml:lang="en">Warm</rdfs:label>
+        <rdfs:label xml:lang="fr">Chaud</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Temperature"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Environnement -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Climat -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Environnement"/>
+    <owl:Class rdf:about="&dnd;Climat"/>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Force -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Collines -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Force">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique"/>
+    <owl:Class rdf:about="&dnd;Collines">
+        <rdfs:label xml:lang="en">Hills</rdfs:label>
+        <rdfs:label xml:lang="fr">Collines</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Terrain"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Humanoïde -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Consistance -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Humanoïde">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Monstre"/>
+    <owl:Class rdf:about="&dnd;Consistance">
+        <rdfs:subClassOf rdf:resource="&dnd;Caracteristique"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Crature_agonisante_stabilisee -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu"/>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu_de_Rôle -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu_de_Rôle">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Jeu"/>
+    <owl:Class rdf:about="&dnd;Crature_agonisante_stabilisee">
+        <rdfs:subClassOf rdf:resource="&dnd;Creature_agonisante"/>
+        <owl:disjointWith rdf:resource="&dnd;Creature_agonisante_non_stabilisee"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Joueur -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Crayon -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Joueur"/>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Loyauté -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Loyauté">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Alignement"/>
+    <owl:Class rdf:about="&dnd;Crayon">
+        <rdfs:subClassOf rdf:resource="&dnd;Materiel"/>
+        <owl:disjointWith rdf:resource="&dnd;De"/>
+        <owl:disjointWith rdf:resource="&dnd;Papier"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Matériel -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Creature -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Matériel"/>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Maître_du_Jeu -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Maître_du_Jeu">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Joueur"/>
+    <owl:Class rdf:about="&dnd;Creature">
+        <rdfs:label xml:lang="en">Creature</rdfs:label>
+        <rdfs:label xml:lang="fr">Créature</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_PV_max"/>
+                <owl:someValuesFrom rdf:resource="&dnd;Tranche_de_Valeur"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_alignement"/>
+                <owl:onClass rdf:resource="&dnd;Loyaute"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_alignement"/>
+                <owl:onClass rdf:resource="&dnd;Morale"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Monstre -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Creature_agonisante -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Monstre">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Créature"/>
+    <owl:Class rdf:about="&dnd;Creature_agonisante">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_PV_max"/>
+                <owl:someValuesFrom rdf:resource="&dnd;Entre_moins_neuf_et_zero_inclus"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&dnd;Creature"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Morale -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Creature_agonisante_non_stabilisee -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Morale">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Alignement"/>
+    <owl:Class rdf:about="&dnd;Creature_agonisante_non_stabilisee">
+        <rdfs:subClassOf rdf:resource="&dnd;Creature_agonisante"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Papier -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Creature_morte -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Papier">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Matériel"/>
+    <owl:Class rdf:about="&dnd;Creature_morte">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_PV_max"/>
+                <owl:someValuesFrom rdf:resource="&dnd;Inferieur_a_moins_dix"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&dnd;Creature"/>
+        <owl:disjointWith rdf:resource="&dnd;Creature_vivante"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Creature_vivante -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Humanoïde"/>
+    <owl:Class rdf:about="&dnd;Creature_vivante">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_PV_max"/>
+                <owl:someValuesFrom rdf:resource="&dnd;Superieur_a_zero"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&dnd;Creature"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage_Joueur -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#De -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage_Joueur">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage_non_Joueur"/>
+    <owl:Class rdf:about="&dnd;De">
+        <rdfs:subClassOf rdf:resource="&dnd;Materiel"/>
+        <owl:disjointWith rdf:resource="&dnd;Papier"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage_non_Joueur -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Desert -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage_non_Joueur">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Personnage"/>
+    <owl:Class rdf:about="&dnd;Desert">
+        <rdfs:label xml:lang="en">Desert</rdfs:label>
+        <rdfs:label xml:lang="fr">Désert</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Terrain"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Possession -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Dexterite -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Possession"/>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Quête -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Quête"/>
-    
-
-
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Sagesse -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Sagesse">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Caractéristique"/>
+    <owl:Class rdf:about="&dnd;Dexterite">
+        <rdfs:subClassOf rdf:resource="&dnd;Caracteristique"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Équipement -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Donjons_et_Dragons -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Équipement">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Possession"/>
+    <owl:Class rdf:about="&dnd;Donjons_et_Dragons">
+        <rdfs:subClassOf rdf:resource="&dnd;Jeu_de_Role"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d10 -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Elemental -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d10">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    <owl:Class rdf:about="&dnd;Elemental">
+        <rdfs:subClassOf rdf:resource="&dnd;Environnement"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d12 -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Entre_moins_neuf_et_zero_inclus -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d12">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    <owl:Class rdf:about="&dnd;Entre_moins_neuf_et_zero_inclus">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_PV_courant"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minExclusive rdf:datatype="&xsd;int">-10</xsd:minExclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="&xsd;int">1</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&dnd;Tranche_de_Valeur"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d20 -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Environnement -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d20">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    <owl:Class rdf:about="&dnd;Environnement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_alignement"/>
+                <owl:onClass rdf:resource="&dnd;Loyaute"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_alignement"/>
+                <owl:onClass rdf:resource="&dnd;Morale"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d4 -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Equipement -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d4">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    <owl:Class rdf:about="&dnd;Equipement">
+        <rdfs:subClassOf rdf:resource="&dnd;Possession"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d6 -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Fleche -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d6">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    <owl:Class rdf:about="&dnd;Fleche">
+        <rdfs:subClassOf rdf:resource="&dnd;Munition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;est_une_munition_de"/>
+                <owl:someValuesFrom rdf:resource="&dnd;Arc"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d8 -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Force -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#1d8">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Dé"/>
+    <owl:Class rdf:about="&dnd;Force">
+        <rdfs:subClassOf rdf:resource="&dnd;Caracteristique"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Forets -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    <owl:Class rdf:about="&dnd;Forets">
+        <rdfs:label xml:lang="en">Forests</rdfs:label>
+        <rdfs:label xml:lang="fr">Forêts</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Terrain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Froid -->
+
+    <owl:Class rdf:about="&dnd;Froid">
+        <rdfs:label xml:lang="en">Cold</rdfs:label>
+        <rdfs:label xml:lang="fr">Froid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Temperature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Humanoide -->
+
+    <owl:Class rdf:about="&dnd;Humanoide">
+        <rdfs:subClassOf rdf:resource="&dnd;Creature"/>
+        <owl:disjointWith rdf:resource="&dnd;Monstre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Inferieur_a_moins_dix -->
+
+    <owl:Class rdf:about="&dnd;Inferieur_a_moins_dix">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_PV_courant"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="&xsd;int">-10</xsd:maxExclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:minExclusive rdf:datatype="&xsd;int">-50</xsd:minExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&dnd;Tranche_de_Valeur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Intelligence -->
+
+    <owl:Class rdf:about="&dnd;Intelligence">
+        <rdfs:subClassOf rdf:resource="&dnd;Caracteristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Jeu -->
+
+    <owl:Class rdf:about="&dnd;Jeu"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Jeu_de_Role -->
+
+    <owl:Class rdf:about="&dnd;Jeu_de_Role">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&dnd;a_pour_joueur"/>
+                        <owl:someValuesFrom rdf:resource="&dnd;Maitre_du_Jeu"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&dnd;a_pour_joueur"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&dnd;Joueur"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&dnd;a_pour_quete"/>
+                                        <owl:someValuesFrom rdf:resource="&dnd;Quete"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&dnd;incarne"/>
+                                        <owl:someValuesFrom rdf:resource="&dnd;Personnage"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&dnd;a_pour_materiel"/>
+                        <owl:someValuesFrom rdf:resource="&dnd;De"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&dnd;Jeu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Joueur -->
+
+    <owl:Class rdf:about="&dnd;Joueur"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Loyaute -->
+
+    <owl:Class rdf:about="&dnd;Loyaute">
+        <rdfs:label xml:lang="en">Loyalty</rdfs:label>
+        <rdfs:label xml:lang="fr">Loyauté</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Alignement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Maitre_du_Jeu -->
+
+    <owl:Class rdf:about="&dnd;Maitre_du_Jeu">
+        <rdfs:subClassOf rdf:resource="&dnd;Joueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Marais -->
+
+    <owl:Class rdf:about="&dnd;Marais">
+        <rdfs:label xml:lang="en">Marshes</rdfs:label>
+        <rdfs:label xml:lang="fr">Marais</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Terrain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Materiel -->
+
+    <owl:Class rdf:about="&dnd;Materiel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Monstre -->
+
+    <owl:Class rdf:about="&dnd;Monstre">
+        <rdfs:label xml:lang="en">Monster</rdfs:label>
+        <rdfs:label xml:lang="fr">Monstre</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&dnd;Creature"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&dnd;Humanoide"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&dnd;Creature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Montagnes -->
+
+    <owl:Class rdf:about="&dnd;Montagnes">
+        <rdfs:label xml:lang="en">Mountains</rdfs:label>
+        <rdfs:label xml:lang="fr">Montagnes</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Terrain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Morale -->
+
+    <owl:Class rdf:about="&dnd;Morale">
+        <rdfs:label xml:lang="en">Morality</rdfs:label>
+        <rdfs:label xml:lang="fr">Morale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Alignement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Munition -->
+
+    <owl:Class rdf:about="&dnd;Munition">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;est_une_munition_de"/>
+                <owl:someValuesFrom rdf:resource="&dnd;Arme_a_Distance"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&dnd;Possession"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Papier -->
+
+    <owl:Class rdf:about="&dnd;Papier">
+        <rdfs:subClassOf rdf:resource="&dnd;Materiel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Personnage -->
+
+    <owl:Class rdf:about="&dnd;Personnage">
+        <rdfs:subClassOf rdf:resource="&dnd;Humanoide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Personnage_Joueur -->
+
+    <owl:Class rdf:about="&dnd;Personnage_Joueur">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&dnd;Personnage"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&dnd;est_incarne_par"/>
+                        <owl:someValuesFrom rdf:resource="&dnd;Joueur"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&dnd;Personnage"/>
+        <owl:disjointWith rdf:resource="&dnd;Personnage_non_Joueur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Personnage_non_Joueur -->
+
+    <owl:Class rdf:about="&dnd;Personnage_non_Joueur">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&dnd;Personnage"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&dnd;est_incarne_par"/>
+                                <owl:someValuesFrom rdf:resource="&dnd;Joueur"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&dnd;Personnage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Plaines -->
+
+    <owl:Class rdf:about="&dnd;Plaines">
+        <rdfs:label xml:lang="en">Plains</rdfs:label>
+        <rdfs:label xml:lang="fr">Plaines</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Terrain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Possession -->
+
+    <owl:Class rdf:about="&dnd;Possession">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;est_possede_par"/>
+                <owl:someValuesFrom rdf:resource="&dnd;Creature"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Propriete_dArme -->
+
+    <owl:Class rdf:about="&dnd;Propriete_dArme">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&dnd;FINESSE"/>
+                    <rdf:Description rdf:about="&dnd;SPECIALE"/>
+                    <rdf:Description rdf:about="&dnd;MUNITION"/>
+                    <rdf:Description rdf:about="&dnd;PORTEE"/>
+                    <rdf:Description rdf:about="&dnd;ALLONGEE"/>
+                    <rdf:Description rdf:about="&dnd;VERSATILE"/>
+                    <rdf:Description rdf:about="&dnd;LOURDE"/>
+                    <rdf:Description rdf:about="&dnd;LEGÈRE"/>
+                    <rdf:Description rdf:about="&dnd;LANCER"/>
+                    <rdf:Description rdf:about="&dnd;À_DEUX_MAINS"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Quete -->
+
+    <owl:Class rdf:about="&dnd;Quete"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Sagesse -->
+
+    <owl:Class rdf:about="&dnd;Sagesse">
+        <rdfs:subClassOf rdf:resource="&dnd;Caracteristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Superieur_a_zero -->
+
+    <owl:Class rdf:about="&dnd;Superieur_a_zero">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dnd;a_pour_PV_courant"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minExclusive rdf:datatype="&xsd;int">0</xsd:minExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&dnd;Tranche_de_Valeur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Temperature -->
+
+    <owl:Class rdf:about="&dnd;Temperature">
+        <rdfs:subClassOf rdf:resource="&dnd;Climat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Tempere -->
+
+    <owl:Class rdf:about="&dnd;Tempere">
+        <rdfs:label xml:lang="en">Temperate</rdfs:label>
+        <rdfs:label xml:lang="fr">Tempéré</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Temperature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Terrain -->
+
+    <owl:Class rdf:about="&dnd;Terrain">
+        <rdfs:subClassOf rdf:resource="&dnd;Environnement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Tranche_de_Valeur -->
+
+    <owl:Class rdf:about="&dnd;Tranche_de_Valeur"/>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#Urbain -->
+
+    <owl:Class rdf:about="&dnd;Urbain">
+        <rdfs:label xml:lang="en">Urban</rdfs:label>
+        <rdfs:label xml:lang="fr">Urbain</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&dnd;Terrain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#1d10 -->
+
+    <owl:Class rdf:about="&dnd;1d10">
+        <rdfs:subClassOf rdf:resource="&dnd;De"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#1d100 -->
+
+    <owl:Class rdf:about="&dnd;1d100">
+        <rdfs:subClassOf rdf:resource="&dnd;De"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#1d12 -->
+
+    <owl:Class rdf:about="&dnd;1d12">
+        <rdfs:subClassOf rdf:resource="&dnd;De"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#1d2 -->
+
+    <owl:Class rdf:about="&dnd;1d2">
+        <rdfs:subClassOf rdf:resource="&dnd;De"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#1d20 -->
+
+    <owl:Class rdf:about="&dnd;1d20">
+        <rdfs:subClassOf rdf:resource="&dnd;De"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#1d3 -->
+
+    <owl:Class rdf:about="&dnd;1d3">
+        <rdfs:subClassOf rdf:resource="&dnd;De"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#1d4 -->
+
+    <owl:Class rdf:about="&dnd;1d4">
+        <rdfs:subClassOf rdf:resource="&dnd;De"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#1d6 -->
+
+    <owl:Class rdf:about="&dnd;1d6">
+        <rdfs:subClassOf rdf:resource="&dnd;De"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#1d8 -->
+
+    <owl:Class rdf:about="&dnd;1d8">
+        <rdfs:subClassOf rdf:resource="&dnd;De"/>
+    </owl:Class>
     
 
 
@@ -566,130 +1140,509 @@
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#ALLONGÉE -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ALLONGEE -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#ALLONGÉE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    <owl:NamedIndividual rdf:about="&dnd;ALLONGEE">
+        <rdf:type rdf:resource="&dnd;Propriete_dArme"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#BON -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ARBALETE_LEGERE -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#BON">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Morale"/>
+    <owl:NamedIndividual rdf:about="&dnd;ARBALETE_LEGERE">
+        <rdf:type rdf:resource="&dnd;Arbalete"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#CHAOTIQUE -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ARBALETE_LOURDE -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#CHAOTIQUE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Loyauté"/>
+    <owl:NamedIndividual rdf:about="&dnd;ARBALETE_LOURDE">
+        <rdf:type rdf:resource="&dnd;Arbalete"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#FINESSE -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ARC_COURT -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#FINESSE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    <owl:NamedIndividual rdf:about="&dnd;ARC_COURT">
+        <rdf:type rdf:resource="&dnd;Arc"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LANCER -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ARC_COURT_COMPOSITE -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LANCER">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    <owl:NamedIndividual rdf:about="&dnd;ARC_COURT_COMPOSITE">
+        <rdf:type rdf:resource="&dnd;Arc"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LOURDE -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ARC_LONG -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LOURDE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    <owl:NamedIndividual rdf:about="&dnd;ARC_LONG">
+        <rdf:type rdf:resource="&dnd;Arc"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LOYAL -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ARC_LONG_COMPOSITE -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LOYAL">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Loyauté"/>
+    <owl:NamedIndividual rdf:about="&dnd;ARC_LONG_COMPOSITE">
+        <rdf:type rdf:resource="&dnd;Arc"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LÉGÈRE -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#BON -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#LÉGÈRE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    <owl:NamedIndividual rdf:about="&dnd;BON">
+        <rdf:type rdf:resource="&dnd;Morale"/>
+        <rdfs:label xml:lang="en">Good</rdfs:label>
+        <rdfs:label xml:lang="fr">Bon</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#MAUVAIS -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#CHAOTIQUE -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#MAUVAIS">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Morale"/>
+    <owl:NamedIndividual rdf:about="&dnd;CHAOTIQUE">
+        <rdf:type rdf:resource="&dnd;Loyaute"/>
+        <rdfs:label xml:lang="en">Chaotic</rdfs:label>
+        <rdfs:label xml:lang="fr">Chaotique</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#MUNITION -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#COLLINES_CHAUDES -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#MUNITION">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    <owl:NamedIndividual rdf:about="&dnd;COLLINES_CHAUDES">
+        <rdf:type rdf:resource="&dnd;Chaud"/>
+        <rdf:type rdf:resource="&dnd;Collines"/>
+        <rdfs:label xml:lang="en">Warm hills</rdfs:label>
+        <rdfs:label xml:lang="fr">COLLINES chaudes</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#NEUTRE_LOYAUTÉ -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#COLLINES_FROIDES -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#NEUTRE_LOYAUTÉ">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Loyauté"/>
+    <owl:NamedIndividual rdf:about="&dnd;COLLINES_FROIDES">
+        <rdf:type rdf:resource="&dnd;Collines"/>
+        <rdf:type rdf:resource="&dnd;Froid"/>
+        <rdfs:label xml:lang="en">Cold hills</rdfs:label>
+        <rdfs:label xml:lang="fr">Collines froides</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#NEUTRE_MORALE -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#COLLINES_TEMPEREES -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#NEUTRE_MORALE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Morale"/>
+    <owl:NamedIndividual rdf:about="&dnd;COLLINES_TEMPEREES">
+        <rdf:type rdf:resource="&dnd;Collines"/>
+        <rdf:type rdf:resource="&dnd;Tempere"/>
+        <rdfs:label xml:lang="en">Temperate hills</rdfs:label>
+        <rdfs:label xml:lang="fr">Collines tempérées</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#PORTÉE -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#DESERT_CHAUD -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#PORTÉE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    <owl:NamedIndividual rdf:about="&dnd;DESERT_CHAUD">
+        <rdf:type rdf:resource="&dnd;Chaud"/>
+        <rdf:type rdf:resource="&dnd;Desert"/>
+        <rdfs:label xml:lang="en">Warm desert</rdfs:label>
+        <rdfs:label xml:lang="fr">Désert chaud</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#SPÉCIALE -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#DESERT_FROID -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#SPÉCIALE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    <owl:NamedIndividual rdf:about="&dnd;DESERT_FROID">
+        <rdf:type rdf:resource="&dnd;Desert"/>
+        <rdf:type rdf:resource="&dnd;Froid"/>
+        <rdfs:label xml:lang="en">Cold desert</rdfs:label>
+        <rdfs:label xml:lang="fr">Désert froid</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#VERSATILE -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#DESERT_TEMPERE -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#VERSATILE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    <owl:NamedIndividual rdf:about="&dnd;DESERT_TEMPERE">
+        <rdf:type rdf:resource="&dnd;Desert"/>
+        <rdf:type rdf:resource="&dnd;Tempere"/>
+        <rdfs:label xml:lang="en">Temperate desert</rdfs:label>
+        <rdfs:label xml:lang="fr">Désert tempéré</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#À_DEUX_MAINS -->
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ELEMENTAL_AIR -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#À_DEUX_MAINS">
-        <rdf:type rdf:resource="http://www.semanticweb.org/justine/ontologies/2015/1/untitled-ontology-12#Propriété_d&apos;Arme"/>
+    <owl:NamedIndividual rdf:about="&dnd;ELEMENTAL_AIR">
+        <rdf:type rdf:resource="&dnd;Elemental"/>
+        <rdfs:label xml:lang="en">Elemental Plane of Air</rdfs:label>
+        <rdfs:label xml:lang="fr">Plan élémental d&apos;air</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ELEMENTAL_EAU -->
+
+    <owl:NamedIndividual rdf:about="&dnd;ELEMENTAL_EAU">
+        <rdf:type rdf:resource="&dnd;Elemental"/>
+        <rdfs:label xml:lang="en">Elemental Plane of Water</rdfs:label>
+        <rdfs:label xml:lang="fr">Plan élémental d&apos;eau</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ELEMENTAL_FEU -->
+
+    <owl:NamedIndividual rdf:about="&dnd;ELEMENTAL_FEU">
+        <rdf:type rdf:resource="&dnd;Elemental"/>
+        <rdfs:label xml:lang="en">Elemental Plane of Fire</rdfs:label>
+        <rdfs:label xml:lang="fr">Plan élémental de feu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ELEMENTAL_TERRE -->
+
+    <owl:NamedIndividual rdf:about="&dnd;ELEMENTAL_TERRE">
+        <rdf:type rdf:resource="&dnd;Elemental"/>
+        <rdfs:label xml:lang="en">Elemental Plane of Earth</rdfs:label>
+        <rdfs:label xml:lang="fr">Plan élémental de terre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ENSOLEILLE -->
+
+    <owl:NamedIndividual rdf:about="&dnd;ENSOLEILLE">
+        <rdf:type rdf:resource="&dnd;Climat"/>
+        <rdfs:label xml:lang="en">Sunny</rdfs:label>
+        <rdfs:label xml:lang="fr">Ensoleillé</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#ETHEREAL -->
+
+    <owl:NamedIndividual rdf:about="&dnd;ETHEREAL">
+        <rdf:type rdf:resource="&dnd;Environnement"/>
+        <rdfs:label xml:lang="en">Ethereal Plane</rdfs:label>
+        <rdfs:label xml:lang="fr">Plan éthéré</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FINESSE -->
+
+    <owl:NamedIndividual rdf:about="&dnd;FINESSE">
+        <rdf:type rdf:resource="&dnd;Propriete_dArme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FORETS_CHAUDES -->
+
+    <owl:NamedIndividual rdf:about="&dnd;FORETS_CHAUDES">
+        <rdf:type rdf:resource="&dnd;Chaud"/>
+        <rdf:type rdf:resource="&dnd;Forets"/>
+        <rdfs:label xml:lang="en">Warm forests</rdfs:label>
+        <rdfs:label xml:lang="fr">Forêts Chaudes</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FORETS_FROIDES -->
+
+    <owl:NamedIndividual rdf:about="&dnd;FORETS_FROIDES">
+        <rdf:type rdf:resource="&dnd;Forets"/>
+        <rdf:type rdf:resource="&dnd;Froid"/>
+        <rdfs:label xml:lang="en">Cold Forests</rdfs:label>
+        <rdfs:label xml:lang="fr">Forêt froides</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FORETS_TEMPEREES -->
+
+    <owl:NamedIndividual rdf:about="&dnd;FORETS_TEMPEREES">
+        <rdf:type rdf:resource="&dnd;Forets"/>
+        <rdf:type rdf:resource="&dnd;Tempere"/>
+        <rdfs:label xml:lang="en">Temperate Forests</rdfs:label>
+        <rdfs:label xml:lang="fr">Forêts tempérées</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#FRONDE -->
+
+    <owl:NamedIndividual rdf:about="&dnd;FRONDE">
+        <rdf:type rdf:resource="&dnd;Arme_a_Distance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#LANCER -->
+
+    <owl:NamedIndividual rdf:about="&dnd;LANCER">
+        <rdf:type rdf:resource="&dnd;Propriete_dArme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#LEGÈRE -->
+
+    <owl:NamedIndividual rdf:about="&dnd;LEGÈRE">
+        <rdf:type rdf:resource="&dnd;Propriete_dArme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#LOURDE -->
+
+    <owl:NamedIndividual rdf:about="&dnd;LOURDE">
+        <rdf:type rdf:resource="&dnd;Propriete_dArme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#LOYAL -->
+
+    <owl:NamedIndividual rdf:about="&dnd;LOYAL">
+        <rdf:type rdf:resource="&dnd;Loyaute"/>
+        <rdfs:label xml:lang="en">Lawful</rdfs:label>
+        <rdfs:label xml:lang="fr">Loyal</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MARAIS_CHAUDS -->
+
+    <owl:NamedIndividual rdf:about="&dnd;MARAIS_CHAUDS">
+        <rdf:type rdf:resource="&dnd;Chaud"/>
+        <rdf:type rdf:resource="&dnd;Marais"/>
+        <rdfs:label xml:lang="en">Warm marshes</rdfs:label>
+        <rdfs:label xml:lang="fr">Marais chauds</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MARAIS_FROIDS -->
+
+    <owl:NamedIndividual rdf:about="&dnd;MARAIS_FROIDS">
+        <rdf:type rdf:resource="&dnd;Froid"/>
+        <rdf:type rdf:resource="&dnd;Marais"/>
+        <rdfs:label xml:lang="en">Cold marshes</rdfs:label>
+        <rdfs:label xml:lang="fr">Marais froids</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MARAIS_TEMPERES -->
+
+    <owl:NamedIndividual rdf:about="&dnd;MARAIS_TEMPERES">
+        <rdf:type rdf:resource="&dnd;Marais"/>
+        <rdf:type rdf:resource="&dnd;Tempere"/>
+        <rdfs:label xml:lang="en">Temperate marshes</rdfs:label>
+        <rdfs:label xml:lang="fr">Marais tempérés</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MAUVAIS -->
+
+    <owl:NamedIndividual rdf:about="&dnd;MAUVAIS">
+        <rdf:type rdf:resource="&dnd;Morale"/>
+        <rdfs:label xml:lang="en">Evil</rdfs:label>
+        <rdfs:label xml:lang="fr">Mauvais</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MILIEU_AQUATIQUE_CHAUD -->
+
+    <owl:NamedIndividual rdf:about="&dnd;MILIEU_AQUATIQUE_CHAUD">
+        <rdf:type rdf:resource="&dnd;Aquatique"/>
+        <rdf:type rdf:resource="&dnd;Chaud"/>
+        <rdfs:label xml:lang="en">Warm aquatic</rdfs:label>
+        <rdfs:label xml:lang="fr">Milieu aquatique chaud</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MILIEU_AQUATIQUE_FROID -->
+
+    <owl:NamedIndividual rdf:about="&dnd;MILIEU_AQUATIQUE_FROID">
+        <rdf:type rdf:resource="&dnd;Aquatique"/>
+        <rdf:type rdf:resource="&dnd;Froid"/>
+        <rdfs:label xml:lang="en">Cold aquatic</rdfs:label>
+        <rdfs:label xml:lang="fr">Milieu aquatique froid</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MILIEU_AQUATIQUE_TEMPERE -->
+
+    <owl:NamedIndividual rdf:about="&dnd;MILIEU_AQUATIQUE_TEMPERE">
+        <rdf:type rdf:resource="&dnd;Aquatique"/>
+        <rdf:type rdf:resource="&dnd;Tempere"/>
+        <rdfs:label xml:lang="en">Temperate aquatic</rdfs:label>
+        <rdfs:label xml:lang="fr">Milieu aquatique tempéré</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MONTAGNES_CHAUDES -->
+
+    <owl:NamedIndividual rdf:about="&dnd;MONTAGNES_CHAUDES">
+        <rdf:type rdf:resource="&dnd;Chaud"/>
+        <rdf:type rdf:resource="&dnd;Montagnes"/>
+        <rdfs:label xml:lang="en">Warm mountains</rdfs:label>
+        <rdfs:label xml:lang="fr">Montagnes chaudes</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MONTAGNES_FROIDES -->
+
+    <owl:NamedIndividual rdf:about="&dnd;MONTAGNES_FROIDES">
+        <rdf:type rdf:resource="&dnd;Froid"/>
+        <rdf:type rdf:resource="&dnd;Montagnes"/>
+        <rdfs:label xml:lang="en">Cold moutains</rdfs:label>
+        <rdfs:label xml:lang="fr">Montagnes froides</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MONTAGNES_TEMPEREES -->
+
+    <owl:NamedIndividual rdf:about="&dnd;MONTAGNES_TEMPEREES">
+        <rdf:type rdf:resource="&dnd;Montagnes"/>
+        <rdf:type rdf:resource="&dnd;Tempere"/>
+        <rdfs:label xml:lang="en">Temperate mountains</rdfs:label>
+        <rdfs:label xml:lang="fr">Montagnes tempérées</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#MUNITION -->
+
+    <owl:NamedIndividual rdf:about="&dnd;MUNITION">
+        <rdf:type rdf:resource="&dnd;Propriete_dArme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#NEUTRE_LOYAUTE -->
+
+    <owl:NamedIndividual rdf:about="&dnd;NEUTRE_LOYAUTE">
+        <rdf:type rdf:resource="&dnd;Loyaute"/>
+        <rdfs:label xml:lang="en">Neutral</rdfs:label>
+        <rdfs:label xml:lang="fr">Neutre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#NEUTRE_MORALE -->
+
+    <owl:NamedIndividual rdf:about="&dnd;NEUTRE_MORALE">
+        <rdf:type rdf:resource="&dnd;Morale"/>
+        <rdfs:label xml:lang="en">Neutral</rdfs:label>
+        <rdfs:label xml:lang="fr">Neutre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PLAINES_CHAUDES -->
+
+    <owl:NamedIndividual rdf:about="&dnd;PLAINES_CHAUDES">
+        <rdf:type rdf:resource="&dnd;Chaud"/>
+        <rdf:type rdf:resource="&dnd;Plaines"/>
+        <rdfs:label xml:lang="en">Warm plains</rdfs:label>
+        <rdfs:label xml:lang="fr">Plaines chaudes</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PLAINES_FROIDES -->
+
+    <owl:NamedIndividual rdf:about="&dnd;PLAINES_FROIDES">
+        <rdf:type rdf:resource="&dnd;Froid"/>
+        <rdf:type rdf:resource="&dnd;Plaines"/>
+        <rdfs:label xml:lang="en">Cold plains</rdfs:label>
+        <rdfs:label xml:lang="fr">Plaines froides</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PLAINES_TEMPEREES -->
+
+    <owl:NamedIndividual rdf:about="&dnd;PLAINES_TEMPEREES">
+        <rdf:type rdf:resource="&dnd;Plaines"/>
+        <rdf:type rdf:resource="&dnd;Tempere"/>
+        <rdfs:label xml:lang="en">Temperate plains</rdfs:label>
+        <rdfs:label xml:lang="fr">Plaines tempérées</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#PORTEE -->
+
+    <owl:NamedIndividual rdf:about="&dnd;PORTEE">
+        <rdf:type rdf:resource="&dnd;Propriete_dArme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#SHADOW -->
+
+    <owl:NamedIndividual rdf:about="&dnd;SHADOW">
+        <rdf:type rdf:resource="&dnd;Environnement"/>
+        <rdfs:label xml:lang="en">Shadow</rdfs:label>
+        <rdfs:label xml:lang="fr">Ténèbres</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#SPECIALE -->
+
+    <owl:NamedIndividual rdf:about="&dnd;SPECIALE">
+        <rdf:type rdf:resource="&dnd;Propriete_dArme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#UNDERGROUND -->
+
+    <owl:NamedIndividual rdf:about="&dnd;UNDERGROUND">
+        <rdf:type rdf:resource="&dnd;Environnement"/>
+        <rdfs:label xml:lang="en">Underground</rdfs:label>
+        <rdfs:label xml:lang="fr">Sous-terrains</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#VERSATILE -->
+
+    <owl:NamedIndividual rdf:about="&dnd;VERSATILE">
+        <rdf:type rdf:resource="&dnd;Propriete_dArme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/justine/ontologies/2015/1/DungeonsAndDragons#À_DEUX_MAINS -->
+
+    <owl:NamedIndividual rdf:about="&dnd;À_DEUX_MAINS">
+        <rdf:type rdf:resource="&dnd;Propriete_dArme"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 

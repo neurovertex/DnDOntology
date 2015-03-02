@@ -29,4 +29,6 @@ public class Dice {
 	public String toString() {
 		return String.format("Dice{%dd%d+%d}", n, d, plus);
 	}
+
+    public String getDescription() { return String.format("%dd%d+%d", n, d, plus); }
 }

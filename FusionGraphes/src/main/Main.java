@@ -17,11 +17,12 @@ import uk.co.magus.fourstore.client.Store;
  */
 public class Main {
 
-    private static String sparql
+    /*private static String sparql
             = "SELECT ?monster ?type "
             + "WHERE{ <http://dbpedia.org/resource/List_of_Dungeons_&_Dragons_3.5_edition_monsters> dbpprop:name ?monster . ?monster  dbpprop:type ?type}";
-
+*/
     private static String sparql2 = "SELECT * WHERE { ?s ?o ?p } LIMIT 10";
+    //private static String sparql2 =
     
     public static void main(String[] args) {
 

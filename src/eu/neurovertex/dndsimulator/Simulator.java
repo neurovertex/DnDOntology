@@ -43,7 +43,7 @@ public class Simulator implements Runnable {
 
 			if (!iterator.hasNext()) {
 				iterator = creatures.iterator();
-				System.out.println("Turn " + turn++ + " passed");
+				System.out.println("\n Turn " + turn++ + " passed \n");
 			}
 		}
 
@@ -88,7 +88,7 @@ public class Simulator implements Runnable {
 		TeamCreature tc = new TeamCreature();
 		tc.creature = c;
 		tc.team = team;
-		tc.initiative = Dice.roll(1, 20, c.getInitiaiveMod());
+		tc.initiative = Dice.roll(1, 20, c.getInitiativeMod());
 		return tc;
 	}
 
@@ -97,7 +97,7 @@ public class Simulator implements Runnable {
 		int team, initiative;
 
 		@Override
-		public int compareTo(TeamCreature o) {
+		public int compareTo(TeamCreature   o) {
 			return Integer.compare(initiative, o.initiative);
 		}
 	}

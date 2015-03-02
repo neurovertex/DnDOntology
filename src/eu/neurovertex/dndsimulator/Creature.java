@@ -8,11 +8,15 @@ import java.util.List;
  *         Time: 16:19
  */
 public interface Creature {
+    public String getName();
+
 	public int getHP();
 
-	public int getInitiaiveMod();
+	public int getInitiativeMod();
 
 	public void play(List<Creature> enemies, List<Creature> friends);
 
-	public void takeAttack(Creature from, int damage);
+    public void tryAttack(Creature to);
+
+	public void takeAttack(Weapon wpn, int damageMod, int roll, boolean crit);
 }
