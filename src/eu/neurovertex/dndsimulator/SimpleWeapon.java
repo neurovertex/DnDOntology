@@ -1,7 +1,8 @@
 package eu.neurovertex.dndsimulator;
 
 /**
- * Created by darkymago on 26/02/15.
+ * 26/02/15
+ * @author darkymago
  */
 public class SimpleWeapon implements Weapon {
 

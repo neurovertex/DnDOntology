@@ -19,4 +19,24 @@ public interface Creature {
     public void tryAttack(Creature to);
 
 	public void takeAttack(Weapon wpn, int damageMod, int roll, boolean crit);
+
+	public enum Loyalty {
+		LAWFUL("LOYAL"), NEUTRAL("NEUTRE_LOYAUTE"), CHAOTIC("CHAOTIQUE");
+		public final String uri;
+
+		Loyalty(String uri) {
+			this.uri = uri;
+		}
+	}
+
+	public enum Morality {
+		GOOD("BON"), NEUTRAL("NEUTRE_MORALE"), EVIL("MAUVAIS");
+		public final String uri;
+
+		Morality(String uri) {
+			this.uri = uri;
+		}
+
+
+	}
 }
